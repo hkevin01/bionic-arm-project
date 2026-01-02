@@ -1,0 +1,517 @@
+# ==============================================================================
+# Bionic Arm Project - Comprehensive .gitignore
+# ==============================================================================
+
+# ==============================================================================
+# Python
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+.pdm-python
+__pypackages__/
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.*
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ==============================================================================
+# C/C++
+# ==============================================================================
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# ==============================================================================
+# Java
+# ==============================================================================
+
+# Compiled class files
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# ==============================================================================
+# IDEs and Editors
+# ==============================================================================
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# ==============================================================================
+# Project-Specific
+# ==============================================================================
+
+# Data files (raw and processed EEG data, large datasets)
+data/raw/**/*.edf
+data/raw/**/*.fif
+data/raw/**/*.bdf
+data/raw/**/*.gdf
+data/raw/**/*.set
+data/processed/**/*.npy
+data/processed/**/*.npz
+data/processed/**/*.pkl
+data/processed/**/*.h5
+data/processed/**/*.hdf5
+
+# Exclude large model files
+data/models/**/*.pt
+data/models/**/*.pth
+data/models/**/*.onnx
+data/models/**/*.pb
+data/models/**/*.tflite
+data/models/**/*.h5
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/calibration/.gitkeep
+!data/models/.gitkeep
+
+# Calibration data (may contain user-specific info)
+data/calibration/**/*.json
+data/calibration/**/*.yaml
+
+# Log files
+logs/
+*.log
+*.log.*
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Hardware test outputs
+tests/hardware/outputs/
+tests/hardware/logs/
+
+# CAD temporary files
+assets/cad/**/*.bak
+assets/cad/**/*.dwl
+assets/cad/**/*.dwl2
+assets/cad/**/*~
+assets/cad/**/~$*
+
+# Video files (too large for git)
+assets/videos/**/*.mp4
+assets/videos/**/*.avi
+assets/videos/**/*.mov
+assets/videos/**/*.mkv
+
+# Keep directory structure
+!assets/images/.gitkeep
+!assets/videos/.gitkeep
+!assets/cad/.gitkeep
+
+# ==============================================================================
+# Build and Compilation
+# ==============================================================================
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# Build directories
+build/
+Build/
+BUILD/
+out/
+bin/
+obj/
+
+# ==============================================================================
+# Docker
+# ==============================================================================
+
+# Docker volumes
+docker/volumes/
+docker/**/*.log
+
+# Keep Dockerfile and compose files
+!docker/Dockerfile*
+!docker/docker-compose*.yml
+!docker/.dockerignore
+
+# ==============================================================================
+# Firmware / Embedded
+# ==============================================================================
+
+# STM32CubeIDE
+.settings/
+Debug/
+Release/
+*.launch
+
+# KiCad
+*.bak
+*.bck
+*-save.pro
+*-save.kicad_pcb
+*.kicad_pcb-bak
+fp-info-cache
+*.net
+*.dsn
+*.ses
+
+# Eagle
+*.b#*
+*.s#*
+*.l#*
+
+# ==============================================================================
+# Machine Learning
+# ==============================================================================
+
+# Trained models (large files)
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.joblib
+
+# TensorBoard logs
+runs/
+tensorboard/
+lightning_logs/
+
+# Weights & Biases
+wandb/
+
+# MLflow
+mlruns/
+
+# ==============================================================================
+# Documentation
+# ==============================================================================
+
+# Auto-generated API docs
+docs/api/_build/
+docs/api/_static/
+docs/api/_templates/
+
+# ==============================================================================
+# Dependencies
+# ==============================================================================
+
+# Node modules (if using any JS tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ==============================================================================
+# Security & Secrets
+# ==============================================================================
+
+# Environment variables with secrets
+.env.local
+.env.*.local
+secrets/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# API keys
+**/api_keys.json
+**/credentials.json
+
+# ==============================================================================
+# Backup Files
+# ==============================================================================
+
+*.bak
+*.backup
+*.old
+*~
+
+# ==============================================================================
+# Profiling and Performance
+# ==============================================================================
+
+*.prof
+*.lprof
+*.pyprof
+
+# ==============================================================================
+# Keep Important Empty Directories
+# ==============================================================================
+
+# Keep these directories in git but ignore their contents
+!.gitkeep

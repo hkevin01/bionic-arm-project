@@ -1,0 +1,126 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Python: Run Tests",
+      "type": "shell",
+      "command": "pytest",
+      "args": [
+        "tests/",
+        "-v",
+        "--cov=src",
+        "--cov-report=html"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Format with Black",
+      "type": "shell",
+      "command": "black",
+      "args": [
+        "src/",
+        "tests/",
+        "scripts/"
+      ],
+      "group": "none",
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Python: Lint with Pylint",
+      "type": "shell",
+      "command": "pylint",
+      "args": [
+        "src/",
+        "--rcfile=.pylintrc"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        ".",
+        "-B",
+        "build",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Build Firmware",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build",
+        "--config",
+        "Debug",
+        "--",
+        "-j",
+        "4"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": ["CMake: Configure"],
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Docker: Build Image",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "build",
+        "-t",
+        "bionic-arm:latest",
+        "-f",
+        "docker/Dockerfile",
+        "."
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: Run Container",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "-f",
+        "docker/docker-compose.yml",
+        "up"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Build Artifacts",
+      "type": "shell",
+      "command": "rm",
+      "args": [
+        "-rf",
+        "build/",
+        "dist/",
+        "*.egg-info",
+        "__pycache__",
+        ".pytest_cache"
+      ],
+      "group": "none",
+      "problemMatcher": []
+    }
+  ]
+}
